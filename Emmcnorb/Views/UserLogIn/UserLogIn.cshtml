@@ -1,0 +1,30 @@
+﻿@model UserLogIn
+@{
+    ViewData["Title"] = "UserLogIn";
+}
+
+<!-- Views/Auth/Login.cshtml -->
+<h1>Login</h1>
+@using (Html.BeginForm("InsertUserLogInToDatabase", "UserLogIn", "Post"))
+{
+<div style="display: block"> <a href="/UserLogIn/UserLogIn/">Sign Up</a></div>
+
+ <!--Here is the page code that lets the login page to display-->
+<form method="post" asp-action="Login">
+    <label for="username">Username:</label>
+    <input type="text" name="Username" id="username" required>
+    <br>
+    <label for="email">Email:</label>
+    <input type="text" name="Email" id="email" required>
+    <br>
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="Password" required>
+    <br>
+    <input type="submit" value="Login">
+</form>
+<nav>
+    <a href="/UserLogIn/UserLogIn/">Forgot Password</a>
+</nav>
+}
+   
+
